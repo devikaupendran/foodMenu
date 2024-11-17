@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+//CSS reset
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Roboto", serif
+}
+
+//Global variables 
+$btn-color : #ffb902;
+
+//Global class
+.d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-style {
+    max-width: 680px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.5
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.mt-10 {
+    margin-top: 20px;
+}
+
+//Styles for Header section
+.header {
+    height: 12vh;
+    justify-content: space-between;
+    padding: 0 50px;
+
+    img {
+        width: 140px;
+        height: 110px;
+        cursor: pointer;
+    }
+
+    &-content {
+        display: flex;
+
+        a {
+            display: block;
+            margin: 0 40px;
+            color: black;
+            font-size: 21px;
+        }
+    }
+}
+
+//Styling for Hero section
+.hero {
+    max-width: 100%;
+    height: 80vh;
+
+    #hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+    }
+
+    h2 {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 40px;
+    }   
+}
+
+//Styling for Special dishes
+section {
+    margin: 80px 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+
+    h1 {
+        font-size: 30px;
+        margin: 10px;
+    }
+
+    p {
+        margin-bottom: 40px;
+    }
+}
+
+
+.special-dishes-display,
+.filtered-dishes-display {
+    ul {
+        flex-wrap: wrap;
+        gap: 30px;
+
+        li {
+            margin-top: 60px;
+            width: 21%;
+
+            img {
+                width: 100%;
+                border-radius: 30px;
+                object-fit: cover;
+            }
+
+            h4 {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+//Styles for filtered Dishes category
+.filtered-category-display {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 30px;
+
+        li {
+            background-color: $btn-color;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            margin: 0 20px 20px 0;
+            transition: all ease .5s;
+            cursor: pointer;
+            font-weight: bold;
+
+            &.active {
+                background-color: seagreen;
+            }
+
+            &:hover {
+                background-color: seagreen;
+            }
+        }
+    }
+}
+
+//Styles for ALERT
+.alert {
+    border: 3px solid orange;
+    width: 100%;
+    margin: 30px;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 1.8;
+    color: red;
+
+    h1 {
+        font-size: 25px;
+    }
+}
+
+//Styles for PAGINATION
+.pagination {
+    margin: 50px 0;
+
+    li {
+        width: 30px;
+        height: 30px;
+        border: 1px solid grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 8px;
+        padding: 8px;
+        cursor: pointer;
+        transition: all ease 0.5s;
+
+        &:hover {
+            background-color: $btn-color;
+            border-color: $btn-color;
+        }
+    }
+}
+
+//Styles for CARD 
+.card {
+    a {
+        color: black;
+    }
+}
+
+//Styles for POPUP
+.popup {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000, 0.8);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 99;
+
+    &-content {
+        background-color: #e8e8e8;
+        width: 700px;
+        height: max-content;
+        border-radius: 5px;
+        flex-direction: column;
+        padding: 20px;
+
+        .popup-header {
+            height: 35vh;
+            overflow: hidden;
+            margin-bottom: 23px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+        }
+
+        .name-category {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            p {
+                background-color: $btn-color;
+                padding: 10px 21px;
+                font-size: 14px;
+                font-weight: bold;
+                box-shadow: 3px 4px 8px #000;
+            }
+        }
+
+        .instructions {
+            max-height: 160px;
+            overflow-y: scroll;
+            font-size: 13px;
+        }
+
+        .dish-ingredients {
+            flex-wrap: wrap;
+
+            li {
+                padding: 9px 15px;
+                margin: 0 10px;
+                background-color: #ebebeb;
+                border-radius: 10px;
+                font-weight: bold;
+                box-shadow: rgb(161, 201, 237) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+            }
+        }
+
+        button {
+            border: none;
+            outline: none;
+            background-color: $btn-color;
+            color: black;
+            padding: 12px 22px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 19px;
+            margin-top: 24px;
+            font-weight: bold;
+            transition: all ease 0.5s;
+
+            &:hover {
+                background-color: #ff4848;
+            }
+        }
+    }
+}
+
+.popup-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all ease 0.5s;
+
+    &:hover {
+        color: #ff4848;
+    }
+}
+
+//Styling for Add To Cart
+.container {
+    position: relative;
+
+    .add-to-cart-wrapper {
+        width: 170px;
+        height: 70%;
+        overflow-y: scroll;
+        position: absolute;
+        top: 26%;
+        right: -20%;
+        display: flex;
+        padding: 10px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 6px;
+    }
+
+    .add-to-cart-item {
+        margin-bottom: 10px;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100px;
+            box-shadow: 2px 2px 12px rgba(#000, 0.8);
+            object-fit: cover;
+
+        }
+
+        >div {
+            border-bottom: 1px dashed black;
+            margin: 5px 0;
+            padding: 5px;
+        }
+
+        h4 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #f8f401;
+            padding: 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all ease 0.7s;
+            z-index: 10;
+
+            &:hover {
+                background-color: #ff4848;
+            }
+        }
+    }
+}
+
+//Styling for checkout
+.container {
+    .checkout-heading {
+        margin: 40px;
+    }
+
+    .checkout-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 30%;
+            height: 300px;
+            cursor: pointer;
+        }
+    }
+
+    img {
+        width: 200px;
+    }
+
+    h5 {
+        text-align: center;
+    }
+
+}
+
+.f {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+//Styles for Loader
+.loader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(#000, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        color: white;
+        margin: 0 20px;
+    }
+
+}
+
+.loading {
+    width: 80px;
+    height: 80px;
+    border: 8px solid #8da9db;
+    border-top-color: #2f5496;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
